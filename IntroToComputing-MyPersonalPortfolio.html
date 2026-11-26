@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Anna Beatriz M. Selma, Computer Science student.">
+  <title>Anna Beatriz M. Selma | Personal Portfolio</title>
+  <style>
+    :root {
+      --accent: #e8710a;
+      --accent-dark: #b85606;
+      --text: #1f2430;
+      --muted: #5b6270;
+      --bg: #f6f4f1;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent-dark);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: var(--card);
+      border-bottom: 1px solid #e3ded8;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .site-header nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .site-header nav a:hover,
+    .site-header nav a:focus {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .greeting {
+      color: var(--accent-dark);
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      max-width: 460px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent-dark);
+    }
+
+    .btn-outline:hover {
+      color: #fff;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto 24px;
+      padding: 36px 32px;
+      background: var(--card);
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+    }
+
+    .section p + p {
+      margin-top: 12px;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .skills li {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #fdeedd;
+      color: var(--accent-dark);
+      font-weight: 600;
+    }
+
+    /* Projects */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 20px;
+      border: 1px solid #e3ded8;
+      border-radius: 8px;
+      background: #fbfaf8;
+    }
+
+    .card h3 {
+      margin-bottom: 6px;
+    }
+
+    /* Contact */
+    .contact-list {
+      margin-top: 12px;
+      list-style: none;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 40px;
+      padding: 24px;
+      text-align: center;
+      background: var(--text);
+      color: #fff;
+    }
+
+    /* Tablet */
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+    }
+
+    /* Phone */
+    @media (max-width: 600px) {
+      .site-header {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 16px;
+      }
+
+      .site-header nav a {
+        margin: 0 8px;
+        font-size: 0.95rem;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-photo {
+        width: 150px;
+        height: 150px;
+        font-size: 2.4rem;
+      }
+
+      .section {
+        margin: 0 12px 16px;
+        padding: 24px 18px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home">Anna Beatriz M. Selma</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="greeting">Hello and Mabuhay, I'm</p>
+        <h1>Anna Beatriz M. Selma</h1>
+        <p class="tagline">Aspiring web developer building clean, responsive websites.</p>
+        <a class="btn" href="#projects">View my work</a>
+        <a class="btn btn-outline" href="#contact">Contact me</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I'm a student at the University of Southern Mindanao taking up Bachelor of Science in Computer Science. I enjoy turning ideas into working websites and I'm learning something new with every challenge I finish.</p>
+      <p>When I'm not coding, I love to have my own time for myself, I like to play also some Mobile Games to give myself a reward, I love listening to music, and spending time with friends and family.</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Java</li>
+        <li>HTML (learning)</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>HTML Layout and Menu Elements</h3>
+          <p>A simple web page using semantic HTML tags and a navigation menu.</p>
+        </article>
+        <article class="card">
+          <h3>Application of Repetition in Java</h3>
+          <p>A program demonstrating the use of loops in Java.</p>
+        </article>
+        <article class="card">
+          <h3>Displaying Student Information</h3>
+          <p>A simple Java program to display student information.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Want to work together or just say hi? Reach me here:</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:s.abmselma@usm.edu.ph">s.abmselma@usm.edu.ph</a></li>
+<li>Contact Number: <a  href="contactto:09052666345">09052666345</a>
+</li>
+        <li>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/abmselma21</a></li>
+        <li>Location: Midsayap, Philippines</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Anna Beatriz M. Selma. All rights reserved.</p>
+  </footer>
+</body>
+</html>
